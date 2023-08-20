@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>TITRE DU SITE</title>
+
+		<!-- Meta description -->
+
+		<meta name="description" content="" />
+
+		<!-- Open graph -->
+
+		<meta property="og:title" content="" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="" />
+		<meta property="og:description" content="" />
+		<meta property="og:locale" content="fr_FR" />
+		<meta property="og:image" content="" />
+		<meta property="og:image:width" content="" />
+		<meta property="og:image:height" content="" />
+
+		<!-- Open graph Twitter -->
+
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="" />
+		<meta name="twitter:creator" content="" />
+
+		<link rel="manifest" href="site.webmanifest" />
+		<link rel="apple-touch-icon" href="icon.png" />
+
+		<!-- Place favicon.ico in the root directory -->
+
+		<link rel="stylesheet" href="stylesheets/main.css" />
+
+		<!-- Font-awesome -->
+
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+			integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+
+		<meta name="theme-color" content="#fafafa" />
+	</head>
+	<body>
+		<!-- splash screen -->
+
+		<header>
+			<img
+				src="./img/Logo.png"
+				alt="Les petits plats"
+				id="logo_petits-plats"
+			/>
+			<h1 id="main-title">
+				CHERCHEZ PARMI PLUS DE 1500 RECETTES <br />
+				DU QUOTIDIEN,SIMPLES ET DÉLICIEUSES
+			</h1>
+			<form action="" id="search-form">
+				<input
+					type="search"
+					id="search-bar"
+					placeholder="Rechercher une recette, un ingrédient,..."
+				/>
+				<button id="search-button">
+					<i class="fa-solid fa-magnifying-glass fa-2xl"></i>
+				</button>
+			</form>
+		</header>
+		<main id="main">
+			<!-- filter tags -->
+
+			<div id="tags">
+				<select
+					class="selects"
+					name="ingredients"
+					id="ingredient-select"
+				>
+					<option value="">ingrédients</option>
+					<option value="">crème de coco</option>
+				</select>
+				<select class="selects" name="appareils" id="appareils-select">
+					<option value="">Appareils</option>
+					<option value="">Four</option>
+				</select>
+				<select class="selects" name="usternsile" id="ustensile-select">
+					<option value="">Ustensiles</option>
+					<option value="">Fouet</option>
+				</select>
+				<p id="recettes-number">1500 recettes</p>
+			</div>
+			<!-- cards container -->
+
+			<article id="cards-container">
+				<!-- card -->
+				<section class="card">
+					<img src="./img/recettes/Recette01.jpg" alt="" />
+					<div class="card-description">
+						<h2>Limonade De Coco</h2>
+						<h3>RECETTE</h3>
+						<p id="recette-description">
+							Mettre les glaçons à votre goût dans le blender,
+							Ajouter le lait la crème de coco, le jus de 2
+							citrons et le sucre ensemble. Mixer jusqu'à obtenir
+							la consistance désirée.
+						</p>
+						<h3>INGREDIENTS</h3>
+						<div id="ingredients-container">
+							<div class="ingredient">
+								<h4>Lait de coco</h4>
+								<p>400ml</p>
+							</div>
+							<div class="ingredient">
+								<h4>Jus de Citron</h4>
+								<p>2</p>
+							</div>
+							<div class="ingredient">
+								<h4>Crème de coco</h4>
+								<p>4 cuillères</p>
+							</div>
+							<div class="ingredient">
+								<h4>Sucre</h4>
+								<p>20g</p>
+							</div>
+							<div class="ingredient">
+								<h4>glaçons</h4>
+								<p>2</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="card">
+					<img src="./img/recettes/Recette02.jpg" alt="" />
+				</section>
+				<section class="card">
+					<img src="./img/recettes/Recette03.jpg" alt="" />
+				</section>
+			</article>
+		</main>
+	</body>
+</html>

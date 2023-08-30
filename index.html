@@ -72,23 +72,46 @@
 		<main id="main">
 			<!-- filter tags -->
 
-			<div id="tags">
-				<select
-					class="selects"
-					name="ingredients"
-					id="ingredient-select"
-				>
-					<option value="">ingrédients</option>
-					<option value="">crème de coco</option>
-				</select>
-				<select class="selects" name="appareils" id="appareils-select">
-					<option value="">Appareils</option>
-					<option value="">Four</option>
-				</select>
-				<select class="selects" name="usternsile" id="ustensile-select">
-					<option value="">Ustensiles</option>
-					<option value="">Fouet</option>
-				</select>
+			<div id="top-bar">
+				<div class="tags-section" id="ingredients">
+					<div class="title-dropdownbtn-container">
+						<h3 class="tag-title">Ingrédients</h3>
+						<button
+							class="dropdownbtn"
+							id="ingredients-btn"
+						></button>
+					</div>
+					<input type="search" id="ingredients_search-input" />
+					<ul class="tags-container" id="ingredients-tags">
+						<li>trucs</li>
+						<li>trucs</li>
+						<li>trucs</li>
+					</ul>
+				</div>
+				<div class="tags-section" id="appareils">
+					<div class="title-dropdownbtn-container">
+						<h3 class="tag-title">Appareils</h3>
+						<button class="dropdownbtn"></button>
+					</div>
+					<input type="search" id="appareils_search-input" />
+					<ul class="tags-container">
+						<li>trucs</li>
+						<li>trucs</li>
+						<li>trucs</li>
+					</ul>
+				</div>
+				<div class="tags-section" id="ustensiles">
+					<div class="title-dropdownbtn-container">
+						<h3 class="tag-title">Ustensiles</h3>
+						<button class="dropdownbtn"></button>
+					</div>
+					<input type="search" id="ustensiles_search-input" />
+					<ul class="tags-container">
+						<li>trucs</li>
+						<li>trucs</li>
+						<li>trucs</li>
+					</ul>
+				</div>
 				<p id="recettes-number">1500 recettes</p>
 			</div>
 			<!-- cards container -->
@@ -139,8 +162,10 @@
 				</section> -->
 			</article>
 		</main>
+
 		<script src="js/algorithme.js"></script>
 		<script type="module" src="js/init.js"></script>
 		<script type="module" src="data/recipes.js"></script>
+		<script src="js/tags.js"></script>
 	</body>
 </html>

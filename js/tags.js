@@ -4,15 +4,37 @@ const ingredientsSearchInput = document.getElementById(
 const ingredientsTags = document.getElementById("ingredients-tags");
 const ingredientBtn = document.getElementById("ingredients-btn");
 
+const appareilsSearchInput = document.getElementById("appareils_search-input");
+const appareilsTags = document.getElementById("appareils-tags");
+const appareilsBtn = document.getElementById("appareils-btn");
+
+const ustensilesSearchInput = document.getElementById(
+	"ustensiles_search-input"
+);
+const ustensilesTags = document.getElementById("ustensiles-tags");
+const ustensilesBtn = document.getElementById("ustensiles-btn");
+
 ingredientBtn.addEventListener("click", showTags);
+appareilsBtn.addEventListener("click", showTags);
+ustensilesBtn.addEventListener("click", showTags);
+
 let isClicked = false;
 function showTags() {
-	isClicked = true;
-	if (isClicked) {
+	if (!isClicked) {
 		ingredientsSearchInput.style.display = "block";
 		ingredientsTags.style.display = "block";
-	} else {
+		/* appareilsSearchInput.style.display = "block";
+		appareilsTags.style.display = "block";
+		ustensilesSearchInput.style.display = "block";
+		ustensilesTags.style.display = "block"; */
+		isClicked = true;
+	} else if (isClicked) {
 		ingredientsSearchInput.style.display = "none";
 		ingredientsTags.style.display = "none";
+		appareilsSearchInput.style.display = "none";
+		appareilsTags.style.display = "none";
+		ustensilesSearchInput.style.display = "none";
+		ustensilesTags.style.display = "none";
+		isClicked = false;
 	}
 }

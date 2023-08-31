@@ -1,5 +1,5 @@
 .card {
-	width: 380px;
+	width: 31%;
 	border-radius: 20px;
 	overflow: hidden;
 	background-color: white;
@@ -17,7 +17,6 @@
 			font-family: $anton;
 			font-weight: 400;
 			color: black;
-			margin: 0 0 15px 0;
 		}
 		h3 {
 			font-family: $manrop;
@@ -25,15 +24,16 @@
 			font-weight: 500;
 			font-size: 15px;
 			letter-spacing: 0.1em;
+			padding: 10px 0;
 		}
-		#recette-description {
+		.recette-description {
 			font-family: $manrop;
 			font-weight: 400;
 			margin: 0;
 			font-size: 14px;
 			color: black;
 		}
-		#ingredients-container {
+		.ingredients-container {
 			display: flex;
 			flex-wrap: wrap;
 			.ingredient {

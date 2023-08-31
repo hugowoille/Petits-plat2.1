@@ -91,10 +91,10 @@
 				<div class="tags-section" id="appareils">
 					<div class="title-dropdownbtn-container">
 						<h3 class="tag-title">Appareils</h3>
-						<button class="dropdownbtn"></button>
+						<button class="dropdownbtn" id="appareils-btn"></button>
 					</div>
 					<input type="search" id="appareils_search-input" />
-					<ul class="tags-container">
+					<ul class="tags-container" id="appareils-tags">
 						<li>trucs</li>
 						<li>trucs</li>
 						<li>trucs</li>
@@ -103,10 +103,13 @@
 				<div class="tags-section" id="ustensiles">
 					<div class="title-dropdownbtn-container">
 						<h3 class="tag-title">Ustensiles</h3>
-						<button class="dropdownbtn"></button>
+						<button
+							class="dropdownbtn"
+							id="ustensiles-btn"
+						></button>
 					</div>
 					<input type="search" id="ustensiles_search-input" />
-					<ul class="tags-container">
+					<ul class="tags-container" id="ustensiles-tags">
 						<li>trucs</li>
 						<li>trucs</li>
 						<li>trucs</li>
@@ -123,14 +126,14 @@
 					<div class="card-description">
 						<h2>Limonade De Coco</h2>
 						<h3>RECETTE</h3>
-						<p id="recette-description">
+						<p class="recette-description">
 							Mettre les glaçons à votre goût dans le blender,
 							Ajouter le lait la crème de coco, le jus de 2
 							citrons et le sucre ensemble. Mixer jusqu'à obtenir
 							la consistance désirée.
 						</p>
 						<h3>INGREDIENTS</h3>
-						<div id="ingredients-container">
+						<div class="ingredients-container">
 							<div class="ingredient">
 								<h4>Lait de coco</h4>
 								<p>400ml</p>
@@ -154,16 +157,10 @@
 						</div>
 					</div>
 				</section>
-				<!-- <section class="card">
-					<img src="./img/recettes/Recette02.jpg" alt="" />
-				</section>
-				<section class="card">
-					<img src="./img/recettes/Recette03.jpg" alt="" />
-				</section> -->
 			</article>
 		</main>
 
-		<script src="js/algorithme.js"></script>
+		<script type="module" src="js/algorithme.js"></script>
 		<script type="module" src="js/init.js"></script>
 		<script type="module" src="data/recipes.js"></script>
 		<script src="js/tags.js"></script>

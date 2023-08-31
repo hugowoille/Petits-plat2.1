@@ -557,7 +557,7 @@ header #search-form #search-button i:hover {
 }
 
 .card {
-  width: 380px;
+  width: 31%;
   border-radius: 20px;
   overflow: hidden;
   background-color: white;
@@ -578,7 +578,6 @@ header #search-form #search-button i:hover {
   font-family: "Anton", sans-serif;
   font-weight: 400;
   color: black;
-  margin: 0 0 15px 0;
 }
 .card .card-description h3 {
   font-family: "Manrope", sans-serif;
@@ -586,24 +585,25 @@ header #search-form #search-button i:hover {
   font-weight: 500;
   font-size: 15px;
   letter-spacing: 0.1em;
+  padding: 10px 0;
 }
-.card .card-description #recette-description {
+.card .card-description .recette-description {
   font-family: "Manrope", sans-serif;
   font-weight: 400;
   margin: 0;
   font-size: 14px;
   color: black;
 }
-.card .card-description #ingredients-container {
+.card .card-description .ingredients-container {
   display: flex;
   flex-wrap: wrap;
 }
-.card .card-description #ingredients-container .ingredient {
+.card .card-description .ingredients-container .ingredient {
   width: 40%;
   margin-right: 15px;
   margin-bottom: 20px;
 }
-.card .card-description #ingredients-container .ingredient h4 {
+.card .card-description .ingredients-container .ingredient h4 {
   font-family: "Manrope", sans-serif;
   font-size: 14px;
   font-weight: 500;
@@ -611,7 +611,7 @@ header #search-form #search-button i:hover {
   margin: 0;
   margin-bottom: 5px;
 }
-.card .card-description #ingredients-container .ingredient p {
+.card .card-description .ingredients-container .ingredient p {
   margin: 0;
   color: #7a7a7a;
   font-size: 14px;
@@ -644,9 +644,10 @@ body {
 #cards-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-top: 35px;
   gap: 30px;
+  flex-wrap: wrap;
 }
 #cards-container #recette-description {
   color: black;

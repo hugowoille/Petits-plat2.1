@@ -593,6 +593,24 @@ header #search-form #search-button i:hover {
   margin: 0;
   font-size: 14px;
   color: black;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+.card .card-description .readmore-button {
+  width: 80px;
+  font-size: 15px;
+  font-family: "Manrope", sans-serif;
+  margin-top: 10px;
+  border-radius: 0;
+  border: none;
+  background-color: #ffd15b;
+  cursor: pointer;
+  color: black;
+  padding: 3px;
+  align-self: flex-end;
 }
 .card .card-description .ingredients-container {
   display: flex;
@@ -612,6 +630,14 @@ header #search-form #search-button i:hover {
   margin-bottom: 5px;
 }
 .card .card-description .ingredients-container .ingredient p {
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0em;
+  margin: 0;
+  margin-bottom: 5px;
+}
+.card .card-description .ingredients-container .ingredient p:last-child {
   margin: 0;
   color: #7a7a7a;
   font-size: 14px;

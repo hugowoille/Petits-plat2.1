@@ -1,7 +1,6 @@
 #top-bar {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+	position: relative;
+
 	.tags-section {
 		background-color: white;
 		border-radius: 11px;
@@ -12,6 +11,14 @@
 		flex-direction: column;
 		overflow: hidden;
 		width: 230px;
+		position: absolute;
+	}
+	#appareils {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	#ustensiles {
+		right: 0;
 	}
 	.title-dropdownbtn-container {
 		display: flex;

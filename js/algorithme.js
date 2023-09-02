@@ -30,10 +30,8 @@ function displayRecipients() {
 		const readMoreButton = document.createElement("button");
 		readMoreButton.classList.add("readmore-button");
 		readMoreButton.textContent = "Voir plus";
-
 		readMoreButton.addEventListener("click", function () {
 			recipeDescription.style["-webkit-line-clamp"] = "unset";
-
 			readMoreButton.style.display = "none";
 		});
 		// ingrédients container
@@ -44,15 +42,19 @@ function displayRecipients() {
 		for (let i = 0; i < recipeIngredients.length; i++) {
 			const ingredient = recipeIngredients[i];
 			const ingredientsDiv = document.createElement("div");
+			console.log("ingredientsDiv:", ingredientsDiv);
 			ingredientsDiv.classList.add("ingredient");
 			ingredientsContainer.appendChild(ingredientsDiv);
 			const ingredientArray = Object.values(ingredient);
+
 			for (let i = 0; i < ingredientArray.length; i++) {
-				const nameOfIngredient = document.createElement("p");
-				nameOfIngredient.textContent = ingredientArray[i];
-				ingredientsDiv.appendChild(nameOfIngredient);
+				const ingredientDetails = document.createElement("p");
+				ingredientsDiv.appendChild(ingredientDetails);
 			}
+			const nameOfIngredient = ingredientsDiv.children[0];
+			nameOfIngredient.textContent = ingredient.ingredient;
 		}
+
 		cardDescription.appendChild(recipeTitle);
 		cardDescription.appendChild(recetteTitle);
 		cardDescription.appendChild(recipeDescription);

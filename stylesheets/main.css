@@ -490,17 +490,17 @@ header #search-form #search-button {
 header #search-form #search-button:hover {
   background-color: #ffd15b;
 }
+header #search-form #search-button:hover > i {
+  color: #1b1b1b;
+}
 header #search-form #search-button i {
   color: white;
-}
-header #search-form #search-button i:hover {
-  color: #1b1b1b;
+  font-size: 25px;
+  line-height: 54px;
 }
 
 #top-bar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  position: relative;
 }
 #top-bar .tags-section {
   background-color: white;
@@ -512,6 +512,14 @@ header #search-form #search-button i:hover {
   flex-direction: column;
   overflow: hidden;
   width: 230px;
+  position: absolute;
+}
+#top-bar #appareils {
+  left: 50%;
+  transform: translateX(-50%);
+}
+#top-bar #ustensiles {
+  right: 0;
 }
 #top-bar .title-dropdownbtn-container {
   display: flex;
@@ -637,11 +645,6 @@ header #search-form #search-button i:hover {
   margin: 0;
   margin-bottom: 5px;
 }
-.card .card-description .ingredients-container .ingredient p:last-child {
-  margin: 0;
-  color: #7a7a7a;
-  font-size: 14px;
-}
 
 body {
   margin: 0;
@@ -670,11 +673,16 @@ body {
 #cards-container {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   margin-top: 35px;
   gap: 30px;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
 }
 #cards-container #recette-description {
   color: black;
+}
+#cards-container:after {
+  content: "";
+  display: block;
+  flex-basis: 31%;
 }/*# sourceMappingURL=main.css.map */

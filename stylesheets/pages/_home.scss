@@ -25,11 +25,16 @@ body {
 #cards-container {
 	display: flex;
 	flex-direction: row;
-	justify-content: flex-start;
+	justify-content: space-between;
 	margin-top: 35px;
 	gap: 30px;
-	flex-wrap: wrap;
+	flex-flow: row wrap;
 	#recette-description {
 		color: black;
+	}
+	&:after {
+		content: "";
+		display: block;
+		flex-basis: 31%;
 	}
 }

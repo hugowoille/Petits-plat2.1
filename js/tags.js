@@ -23,18 +23,12 @@ function showTags() {
 	if (!isClicked) {
 		ingredientsSearchInput.style.display = "block";
 		ingredientsTags.style.display = "block";
-		/* appareilsSearchInput.style.display = "block";
-		appareilsTags.style.display = "block";
-		ustensilesSearchInput.style.display = "block";
-		ustensilesTags.style.display = "block"; */
+
 		isClicked = true;
 	} else if (isClicked) {
 		ingredientsSearchInput.style.display = "none";
 		ingredientsTags.style.display = "none";
-		appareilsSearchInput.style.display = "none";
-		appareilsTags.style.display = "none";
-		ustensilesSearchInput.style.display = "none";
-		ustensilesTags.style.display = "none";
+
 		isClicked = false;
 	}
 }

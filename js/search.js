@@ -1,9 +1,17 @@
 import recipes from "../data/recipes.js";
-const cardsContainer = document.getElementById("cards-container");
 
-function displayRecipients() {
-	for (let i = 0; i < recipes.length; i++) {
-		const recipe = recipes[i];
+function getFilteredRecipients(searchInputValue, selectedTags = []) {
+	return [4, 24, 32, 12];
+}
+
+function displayRecipients(recipientsIds, containerId = "cards-container") {
+	const cardsContainer = document.getElementById(containerId);
+	const filteredRecipients = recipes.filter((recipe) =>
+		recipientsIds.includes(recipe.id)
+	);
+
+	for (let i = 0; i < filteredRecipients.length; i++) {
+		const recipe = filteredRecipients[i];
 		// card container
 		const card = document.createElement("section");
 		card.classList.add("card");
@@ -40,19 +48,25 @@ function displayRecipients() {
 		const recipeIngredients = recipe.ingredients;
 
 		for (let i = 0; i < recipeIngredients.length; i++) {
-			const ingredient = recipeIngredients[i];
-			const ingredientsDiv = document.createElement("div");
-			console.log("ingredientsDiv:", ingredientsDiv);
-			ingredientsDiv.classList.add("ingredient");
-			ingredientsContainer.appendChild(ingredientsDiv);
-			const ingredientArray = Object.values(ingredient);
-
-			for (let i = 0; i < ingredientArray.length; i++) {
-				const ingredientDetails = document.createElement("p");
-				ingredientsDiv.appendChild(ingredientDetails);
+			const getIngredient = recipeIngredients[i];
+			const ingredient = document.createElement("div");
+			console.log("ingredientsDiv:", ingredient);
+			ingredient.classList.add("ingredient");
+			const ingredientName = document.createElement("div");
+			ingredientName.innerText = getIngredient.ingredient;
+			ingredientName.classList.add("ingredient-name");
+			const unitAndQuantity = document.createElement("div");
+			unitAndQuantity.classList.add("quantity-unit");
+			if (getIngredient.unit === undefined) {
+				unitAndQuantity.innerText = getIngredient.quantity;
+			} else {
+				unitAndQuantity.innerText =
+					getIngredient.quantity + " " + getIngredient.unit;
 			}
-			const nameOfIngredient = ingredientsDiv.children[0];
-			nameOfIngredient.textContent = ingredient.ingredient;
+
+			ingredient.appendChild(ingredientName);
+			ingredient.appendChild(unitAndQuantity);
+			ingredientsContainer.appendChild(ingredient);
 		}
 
 		cardDescription.appendChild(recipeTitle);
@@ -68,4 +82,11 @@ function displayRecipients() {
 	}
 }
 
-displayRecipients();
+function filterAndDisplay() {
+	const searchInputValue = document.getElementById("search-bar").value;
+	const tags = [];
+	const filteredRecipientIds = getFilteredRecipients(searchInputValue, tags);
+	displayRecipients(filteredRecipientIds);
+}
+
+export default filterAndDisplay;

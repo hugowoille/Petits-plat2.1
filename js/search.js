@@ -1,7 +1,30 @@
 import recipes from "../data/recipes.js";
 
-function getFilteredRecipients(searchInputValue, selectedTags = []) {
-	return [4, 24, 32, 12];
+function doesRecipeMatch(inputValue, recipe) {
+	if (inputValue !== undefined && inputValue.length > 3) {
+		const splitedValue = inputValue.split(" ");
+		const splitedDescription = recipe.description.split(" ");
+
+		for (let i = 0; i < splitedValue.length; i++) {
+			for (let y = 0; y < splitedDescription.length; y++) {
+				if (splitedValue[i] === splitedDescription[y]) {
+					console.log(recipe);
+				}
+			}
+		}
+	}
+
+	return true;
+}
+
+function getFilteredRecipients(inputValue, selectedTags = []) {
+	const filteredRecipesIds = [];
+	recipes.forEach((recipe) => {
+		if (doesRecipeMatch(inputValue, recipe)) {
+			filteredRecipesIds.push(recipe.id);
+		}
+	});
+	return filteredRecipesIds;
 }
 
 function displayRecipients(recipientsIds, containerId = "cards-container") {
@@ -50,7 +73,6 @@ function displayRecipients(recipientsIds, containerId = "cards-container") {
 		for (let i = 0; i < recipeIngredients.length; i++) {
 			const getIngredient = recipeIngredients[i];
 			const ingredient = document.createElement("div");
-			console.log("ingredientsDiv:", ingredient);
 			ingredient.classList.add("ingredient");
 			const ingredientName = document.createElement("div");
 			ingredientName.innerText = getIngredient.ingredient;
@@ -63,18 +85,15 @@ function displayRecipients(recipientsIds, containerId = "cards-container") {
 				unitAndQuantity.innerText =
 					getIngredient.quantity + " " + getIngredient.unit;
 			}
-
 			ingredient.appendChild(ingredientName);
 			ingredient.appendChild(unitAndQuantity);
 			ingredientsContainer.appendChild(ingredient);
 		}
-
 		cardDescription.appendChild(recipeTitle);
 		cardDescription.appendChild(recetteTitle);
 		cardDescription.appendChild(recipeDescription);
 		cardDescription.appendChild(readMoreButton);
 		cardDescription.appendChild(ingredientTitle);
-
 		cardDescription.appendChild(ingredientsContainer);
 		card.appendChild(imgCard);
 		card.appendChild(cardDescription);
@@ -82,10 +101,12 @@ function displayRecipients(recipientsIds, containerId = "cards-container") {
 	}
 }
 
-function filterAndDisplay() {
-	const searchInputValue = document.getElementById("search-bar").value;
-	const tags = [];
-	const filteredRecipientIds = getFilteredRecipients(searchInputValue, tags);
+function filterAndDisplay(newSearchValue, selectedTags) {
+	const filteredRecipientIds = getFilteredRecipients(
+		newSearchValue,
+		selectedTags
+	);
+
 	displayRecipients(filteredRecipientIds);
 }
 

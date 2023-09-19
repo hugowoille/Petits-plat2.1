@@ -4,17 +4,14 @@ function doesRecipeMatch(inputValue, recipe) {
 	if (inputValue !== undefined && inputValue.length > 3) {
 		const splitedValue = inputValue.split(" ");
 		const splitedDescription = recipe.description.split(" ");
-
 		for (let i = 0; i < splitedValue.length; i++) {
-			for (let y = 0; y < splitedDescription.length; y++) {
-				if (splitedValue[i] === splitedDescription[y]) {
-					console.log(recipe);
+			for (let d = 0; d < splitedDescription.length; d++) {
+				if (splitedValue[i] === splitedDescription[d]) {
+					return true;
 				}
 			}
 		}
 	}
-
-	return true;
 }
 
 function getFilteredRecipients(inputValue, selectedTags = []) {

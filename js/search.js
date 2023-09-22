@@ -1,17 +1,55 @@
 import recipes from "../data/recipes.js";
 
 function doesRecipeMatch(inputValue, recipe) {
-	if (inputValue !== undefined && inputValue.length > 3) {
-		const splitedValue = inputValue.split(" ");
-		const splitedDescription = recipe.description.split(" ");
-		for (let i = 0; i < splitedValue.length; i++) {
-			for (let d = 0; d < splitedDescription.length; d++) {
-				if (splitedValue[i] === splitedDescription[d]) {
-					return true;
-				}
+	if (
+		inputValue?.length <= 3 ||
+		inputValue === undefined ||
+		inputValue === null
+	) {
+		return true;
+	}
+
+	const inputSplitedValue = inputValue.split(" ");
+	const splitedDescription = recipe.description.split(" ");
+	const splitedName = recipe.name.split(" ");
+	const splitedIngredients = [];
+	recipe.ingredients.forEach((item) => {
+		splitedIngredients.push(...item.ingredient.split(" "));
+	});
+	function sanitizeString(string) {
+		const sanitizedString = string.toLowerCase();
+		return sanitizedString;
+	}
+	for (let i = 0; i < inputSplitedValue.length; i++) {
+		const sanitizedInputValue = sanitizeString(inputSplitedValue[i]); // + carac spéciaux
+		const inputValueLength = sanitizedInputValue.length;
+
+		for (let d = 0; d < splitedDescription.length; d++) {
+			const slicedDescription = sanitizeString(
+				splitedDescription[d]
+			).slice(0, inputValueLength);
+			if (sanitizedInputValue === slicedDescription) {
+				return true;
+			}
+		}
+		for (let n = 0; n < splitedName.length; n++) {
+			if (
+				sanitizeString(inputSplitedValue[i]) ===
+				sanitizeString(splitedName[n])
+			) {
+				return true;
+			}
+		}
+		for (let g = 0; g < splitedIngredients.length; g++) {
+			if (
+				sanitizeString(inputSplitedValue[i]) ===
+				sanitizeString(splitedIngredients[g])
+			) {
+				return true;
 			}
 		}
 	}
+	return false;
 }
 
 function getFilteredRecipients(inputValue, selectedTags = []) {
@@ -26,6 +64,7 @@ function getFilteredRecipients(inputValue, selectedTags = []) {
 
 function displayRecipients(recipientsIds, containerId = "cards-container") {
 	const cardsContainer = document.getElementById(containerId);
+	cardsContainer.innerHTML = "";
 	const filteredRecipients = recipes.filter((recipe) =>
 		recipientsIds.includes(recipe.id)
 	);

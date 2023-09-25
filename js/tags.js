@@ -15,8 +15,8 @@ const ustensilesTags = document.getElementById("ustensiles-tags");
 const ustensilesBtn = document.getElementById("ustensiles-btn");
 
 ingredientBtn.addEventListener("click", showTags);
-appareilsBtn.addEventListener("click", showTags);
-ustensilesBtn.addEventListener("click", showTags);
+/* appareilsBtn.addEventListener("click", showTags);
+ustensilesBtn.addEventListener("click", showTags); */
 
 let isClicked = false;
 function showTags() {

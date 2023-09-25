@@ -49,6 +49,13 @@
 	input {
 		margin: 10px;
 		display: none;
+		border: none;
+		outline: 1px solid grey;
+		padding: 10px;
+		&:focus {
+			border: none;
+			outline: 1px solid grey;
+		}
 	}
 	ul {
 		display: flex;

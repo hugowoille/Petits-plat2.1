@@ -485,7 +485,6 @@ header #search-form #search-button {
   outline: none;
   margin-right: 5px;
   border-radius: 10px;
-  transition: 0.3s;
 }
 header #search-form #search-button:hover {
   background-color: #ffd15b;
@@ -550,6 +549,13 @@ header #search-form #search-button i {
 #top-bar input {
   margin: 10px;
   display: none;
+  border: none;
+  outline: 1px solid grey;
+  padding: 10px;
+}
+#top-bar input:focus {
+  border: none;
+  outline: 1px solid grey;
 }
 #top-bar ul {
   display: flex;
@@ -579,6 +585,17 @@ header #search-form #search-button i {
      object-fit: cover;
   display: block;
 }
+.card .time-recipe {
+  background-color: #ffd15b;
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  border-radius: 90px;
+  font-size: 15px;
+  font-family: "Manrope", sans-serif;
+  color: #1b1b1b;
+  padding: 5px 10px;
+}
 .card .card-description {
   padding: 25px;
   display: flex;
@@ -603,11 +620,12 @@ header #search-form #search-button i {
   margin: 0;
   font-size: 14px;
   color: black;
-  display: -webkit-box;
+  /* display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 5;
-  overflow: hidden;
-  transition: all 0.4s;
+  overflow: hidden; */
+  max-height: 80px;
+  overflow-y: hidden;
 }
 .card .card-description .readmore-button {
   width: 80px;

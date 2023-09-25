@@ -12,7 +12,7 @@ init();
 
 function onSearchChange(searchBar, selectedTags) {
 	searchBar.addEventListener("input", (event) => {
-		if (event.target.textLength > 3) {
+		if (event.target.textLength >= 3) {
 			const searchBarValue = document.getElementById("search-bar").value;
 			filterAndDisplay(searchBarValue, selectedTags);
 		}

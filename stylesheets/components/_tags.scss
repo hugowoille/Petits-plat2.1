@@ -1,6 +1,6 @@
 #top-bar {
 	position: relative;
-
+	z-index: 10;
 	.tags-section {
 		background-color: white;
 		border-radius: 11px;
@@ -57,10 +57,12 @@
 			outline: 1px solid grey;
 		}
 	}
-	ul {
+	.tags-container {
 		display: flex;
 		flex-direction: column;
 		display: none;
+		height: 230px;
+		overflow-y: scroll;
 		li {
 			padding: 10px;
 			&:hover {

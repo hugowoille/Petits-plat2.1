@@ -500,6 +500,7 @@ header #search-form #search-button i {
 
 #top-bar {
   position: relative;
+  z-index: 10;
 }
 #top-bar .tags-section {
   background-color: white;
@@ -557,15 +558,17 @@ header #search-form #search-button i {
   border: none;
   outline: 1px solid grey;
 }
-#top-bar ul {
+#top-bar .tags-container {
   display: flex;
   flex-direction: column;
   display: none;
+  height: 230px;
+  overflow-y: scroll;
 }
-#top-bar ul li {
+#top-bar .tags-container li {
   padding: 10px;
 }
-#top-bar ul li:hover {
+#top-bar .tags-container li:hover {
   background-color: #ffd15b;
   cursor: pointer;
 }
@@ -577,6 +580,7 @@ header #search-form #search-button i {
   border-radius: 20px;
   overflow: hidden;
   background-color: white;
+  position: relative;
 }
 .card img {
   width: 100%;

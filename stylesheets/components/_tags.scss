@@ -17,7 +17,7 @@
 		left: 50%;
 		transform: translateX(-50%);
 	}
-	#ustensiles {
+	#ustensils {
 		right: 0;
 	}
 	.title-dropdownbtn-container {
@@ -46,17 +46,31 @@
 			cursor: pointer;
 		}
 	}
-	input {
-		margin: 10px;
+	form {
 		display: none;
-		border: none;
-		outline: 1px solid grey;
-		padding: 10px;
-		&:focus {
+		position: relative;
+
+		input {
+			margin: 10px;
 			border: none;
 			outline: 1px solid grey;
+			padding: 10px;
+			width: calc(100% - 20px);
+			&:focus {
+				border: none;
+				outline: 1px solid grey;
+			}
+		}
+		i {
+			position: absolute;
+			right: 25px;
+			top: 50%;
+			transform: translateY(-50%);
+			font-size: 20px;
+			cursor: pointer;
 		}
 	}
+
 	.tags-container {
 		display: flex;
 		flex-direction: column;

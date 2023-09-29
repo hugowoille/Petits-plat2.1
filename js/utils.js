@@ -1,5 +1,3 @@
-import recipes from "../data/recipes.js";
-
 function getIngredientsList(recipes) {
 	const ingredientsList = [];
 	for (let r = 0; r < recipes.length; r++) {
@@ -13,15 +11,32 @@ function getIngredientsList(recipes) {
 	}
 	return ingredientsList;
 }
-function getApplianceList(recipes) {
+function getAppliancesList(recipes) {
 	const applianceList = [];
 	for (let a = 0; a < recipes.length; a++) {
-		const recipeAppliance = recipes[a];
-		applianceList.push(recipeAppliance.appliance);
+		const appliance = recipes[a].appliance;
+		if (!applianceList.includes(appliance)) {
+			applianceList.push(appliance);
+		}
 	}
 	return applianceList;
 }
+function getUstensilsList(recipes) {
+	const ustensilsList = [];
+	for (let r = 0; r < recipes.length; r++) {
+		const recipeUstensils = recipes[r].ustensils;
+		for (let i = 0; i < recipeUstensils.length; i++) {
+			const ustensil = recipeUstensils[i];
+			if (!ustensilsList.includes(ustensil)) {
+				ustensilsList.push(ustensil);
+			}
+		}
+	}
+	return ustensilsList;
+}
 
-console.log(getApplianceList(recipes));
-
-export default getIngredientsList;
+export default {
+	getIngredientsList,
+	getAppliancesList,
+	getUstensilsList,
+};

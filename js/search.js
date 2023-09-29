@@ -60,6 +60,7 @@ function getFilteredRecipients(inputValue, selectedTags = []) {
 			filteredRecipesIds.push(recipe.id);
 		}
 	});
+
 	return filteredRecipesIds;
 }
 
@@ -71,5 +72,10 @@ function filterAndDisplay(newSearchValue, selectedTags) {
 
 	displayRecipients(filteredRecipientIds);
 }
+
+const recipeNumberContainer = document.getElementById("recettes-number");
+const recipesNumber = getFilteredRecipients().length;
+console.log("recipesNumber:", recipesNumber);
+recipeNumberContainer.textContent = `${recipesNumber} recettes`;
 
 export default filterAndDisplay;

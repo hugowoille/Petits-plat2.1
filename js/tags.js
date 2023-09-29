@@ -1,9 +1,8 @@
 import recipes from "../data/recipes.js";
 import utilsFunction from "./utils.js";
 
-const cardsContainer = document.getElementById("cards-container");
 // ingredients
-
+const ingredientsSection = document.getElementById("ingredients");
 const ingredientsContainer = document.getElementById("ingredients-tags");
 const ingredientBtn = document.getElementById("ingredients-btn");
 const ingredientsSearchForm = document.getElementById(
@@ -24,14 +23,28 @@ ingredientBtn.addEventListener("click", function () {
 	showTags(
 		ingredientsContainer,
 		ingredientsSearchForm,
-		isBtnIngredientClicked
+		isBtnIngredientClicked,
+		ingredientsSection
 	);
 	isBtnIngredientClicked = !isBtnIngredientClicked;
-	updateCardsContainerMargin();
+});
+
+// reset ingredients tags input
+
+const resetIngredientsInputBtn = document.getElementById(
+	"reset-ingredients-input"
+);
+const ingredientsSearchInput = document.getElementById(
+	"ingredients_search-input"
+);
+
+resetIngredientsInputBtn.addEventListener("click", function () {
+	resetSearchTagsInput(ingredientsSearchInput);
 });
 
 // Appliances
 
+const appliancesSection = document.getElementById("appliance");
 const appliancesContainer = document.getElementById("appliance-tags");
 const applianceSearchForm = document.getElementById("appliance-search-form");
 const applianceBtn = document.getElementById("appliance-btn");
@@ -47,13 +60,31 @@ for (let i = 0; i < appliancesList.length; i++) {
 
 let isBtnApplianceClicked = false;
 applianceBtn.addEventListener("click", function () {
-	showTags(appliancesContainer, applianceSearchForm, isBtnApplianceClicked);
+	showTags(
+		appliancesContainer,
+		applianceSearchForm,
+		isBtnApplianceClicked,
+		appliancesSection
+	);
 	isBtnApplianceClicked = !isBtnApplianceClicked;
-	updateCardsContainerMargin();
+});
+
+// reset appliances tags input
+
+const resetApplianceInputBtn = document.getElementById(
+	"reset-appliances-input"
+);
+const appliancesSearchInput = document.getElementById(
+	"appliances_search-input"
+);
+
+resetApplianceInputBtn.addEventListener("click", function () {
+	resetSearchTagsInput(appliancesSearchInput);
 });
 
 // ustensils
 
+const ustensilsSection = document.getElementById("ustensils");
 const ustensilsContainer = document.getElementById("ustensils-tags");
 const ustensilSearchForm = document.getElementById("ustensils-search-form");
 const ustensilBtn = document.getElementById("ustensils-btn");
@@ -69,31 +100,38 @@ for (let i = 0; i < ustensilsList.length; i++) {
 
 let isBtnUstensilClicked = false;
 ustensilBtn.addEventListener("click", function () {
-	showTags(ustensilsContainer, ustensilSearchForm, isBtnUstensilClicked);
+	showTags(
+		ustensilsContainer,
+		ustensilSearchForm,
+		isBtnUstensilClicked,
+		ustensilsSection
+	);
 	isBtnUstensilClicked = !isBtnUstensilClicked;
-	updateCardsContainerMargin();
 });
 
-function showTags(ulOfElement, searchBarOfElement, isClicked) {
+// reset ustensils tags input
+
+const resetUstensilsInputBtn = document.getElementById("reset-ustensils-input");
+const ustensilSearchInput = document.getElementById("ustensils_search-input");
+
+resetUstensilsInputBtn.addEventListener("click", function () {
+	resetSearchTagsInput(ustensilSearchInput);
+});
+
+function showTags(ulOfElement, searchBarOfElement, isClicked, tagsSection) {
 	if (!isClicked) {
 		ulOfElement.style.display = "block";
 		searchBarOfElement.style.display = "block";
+		tagsSection.style.height = "342px";
 		isClicked = true;
 	} else if (isClicked) {
 		ulOfElement.style.display = "none";
 		searchBarOfElement.style.display = "none";
 		isClicked = false;
+		tagsSection.style.height = "48px";
 	}
 }
 
-function updateCardsContainerMargin() {
-	if (
-		isBtnIngredientClicked ||
-		isBtnApplianceClicked ||
-		isBtnUstensilClicked
-	) {
-		cardsContainer.style.marginTop = "340px";
-	} else {
-		cardsContainer.style.marginTop = "35px";
-	}
+function resetSearchTagsInput(input) {
+	input.value = "";
 }

@@ -47,6 +47,7 @@ function doesRecipeMatch(inputValue, recipe) {
 			}
 		}
 	}
+
 	return false;
 }
 

@@ -71,7 +71,7 @@
 		<main id="main">
 			<!-- filter tags -->
 
-			<div id="top-bar">
+			<div id="filter-bar">
 				<!-- Ingredients tags -->
 
 				<div class="tags-section" id="ingredients">
@@ -83,8 +83,15 @@
 						></button>
 					</div>
 					<form action="" id="ingredients-search-form">
-						<input type="search" id="ingredients_search-input" />
-						<i class="fa-solid fa-xmark"></i>
+						<input
+							type="search"
+							id="ingredients_search-input"
+							maxlength="15"
+						/>
+						<i
+							id="reset-ingredients-input"
+							class="fa-solid fa-xmark"
+						></i>
 					</form>
 					<ul class="tags-container" id="ingredients-tags"></ul>
 				</div>
@@ -96,8 +103,15 @@
 						<button class="dropdownbtn" id="appliance-btn"></button>
 					</div>
 					<form action="" id="appliance-search-form">
-						<input type="search" id="appliance_search-input" />
-						<i class="fa-solid fa-xmark"></i>
+						<input
+							type="search"
+							id="appliances_search-input"
+							maxlength="15"
+						/>
+						<i
+							id="reset-appliances-input"
+							class="fa-solid fa-xmark"
+						></i>
 					</form>
 					<ul class="tags-container" id="appliance-tags"></ul>
 				</div>
@@ -109,8 +123,15 @@
 						<button class="dropdownbtn" id="ustensils-btn"></button>
 					</div>
 					<form action="" id="ustensils-search-form">
-						<input type="search" id="ustensils_search-input" />
-						<i class="fa-solid fa-xmark"></i>
+						<input
+							type="search"
+							id="ustensils_search-input"
+							maxlength="15"
+						/>
+						<i
+							id="reset-ustensils-input"
+							class="fa-solid fa-xmark"
+						></i>
 					</form>
 
 					<ul class="tags-container" id="ustensils-tags"></ul>

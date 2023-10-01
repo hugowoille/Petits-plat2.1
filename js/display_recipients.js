@@ -6,6 +6,9 @@ function displayRecipients(recipientsIds, containerId = "cards-container") {
 	const filteredRecipients = recipes.filter((recipe) =>
 		recipientsIds.includes(recipe.id)
 	);
+	const recipeNumberContainer = document.getElementById("recettes-number");
+
+	recipeNumberContainer.textContent = `${filteredRecipients.length} recettes`;
 
 	for (let i = 0; i < filteredRecipients.length; i++) {
 		const recipe = filteredRecipients[i];

@@ -5,6 +5,7 @@ function init() {
 	const searchBar = document.getElementById("search-bar");
 	const selectedTags = [];
 	filterAndDisplay();
+
 	onSearchChange(searchBar, selectedTags);
 }
 

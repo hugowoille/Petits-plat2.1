@@ -1,15 +1,24 @@
 import recipes from "../data/recipes.js";
 
-function displayRecipients(recipientsIds, containerId = "cards-container") {
+function displayRecipients(
+	recipientsIds,
+	containerId = "cards-container",
+	inputValue
+) {
 	const cardsContainer = document.getElementById(containerId);
 	cardsContainer.innerHTML = "";
 	const filteredRecipients = recipes.filter((recipe) =>
 		recipientsIds.includes(recipe.id)
 	);
+
 	const recipeNumberContainer = document.getElementById("recettes-number");
-
 	recipeNumberContainer.textContent = `${filteredRecipients.length} recettes`;
-
+	if (filteredRecipients.length === 0) {
+		console.log("aucune recettes ne match !");
+		alert(
+			`Aucune recette ne contient ${inputValue} vous pouvez chercher « tarte aux pommes », « poisson » `
+		);
+	}
 	for (let i = 0; i < filteredRecipients.length; i++) {
 		const recipe = filteredRecipients[i];
 		// card container

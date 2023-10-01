@@ -9,9 +9,10 @@ function sanitizeString(string) {
 
 function doesRecipeMatch(inputValue, recipe) {
 	if (
-		inputValue?.length < 3 ||
+		inputValue?.length <= 3 ||
 		inputValue === undefined ||
-		inputValue === null
+		inputValue === null ||
+		inputValue === ""
 	) {
 		return true;
 	}
@@ -69,13 +70,7 @@ function filterAndDisplay(newSearchValue, selectedTags) {
 		newSearchValue,
 		selectedTags
 	);
-
-	displayRecipients(filteredRecipientIds);
+	displayRecipients(filteredRecipientIds, "cards-container", newSearchValue);
 }
-
-const recipeNumberContainer = document.getElementById("recettes-number");
-const recipesNumber = getFilteredRecipients().length;
-console.log("recipesNumber:", recipesNumber);
-recipeNumberContainer.textContent = `${recipesNumber} recettes`;
 
 export default filterAndDisplay;

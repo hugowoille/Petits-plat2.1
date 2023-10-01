@@ -14,8 +14,24 @@ const ingredientsSearchForm = document.getElementById(
 const ingredientsList = utilsFunction.getIngredientsList(recipes);
 for (let i = 0; i < ingredientsList.length; i++) {
 	const ingredient = document.createElement("li");
+
 	ingredient.textContent = ingredientsList[i];
 	ingredientsContainer.appendChild(ingredient);
+	let isIngredientClicked = false;
+	ingredient.addEventListener("click", function () {
+		if (!isIngredientClicked) {
+			ingredient.style.backgroundColor = "#ffd15b";
+			const tagResetImg = document.createElement("img");
+			tagResetImg.src = "../img/tag_reset.png";
+			tagResetImg.addEventListener("click", function () {
+				ingredient.style.backgroundColor = "white";
+				tagResetImg.style.display = "none";
+				/* isIngredientClicked = false; */
+			});
+			ingredient.appendChild(tagResetImg);
+			isIngredientClicked = true;
+		}
+	});
 }
 
 let isBtnIngredientClicked = false;

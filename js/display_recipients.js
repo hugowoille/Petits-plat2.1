@@ -14,9 +14,8 @@ function displayRecipients(
 	const recipeNumberContainer = document.getElementById("recettes-number");
 	recipeNumberContainer.textContent = `${filteredRecipients.length} recettes`;
 	if (filteredRecipients.length === 0) {
-		console.log("aucune recettes ne match !");
 		alert(
-			`Aucune recette ne contient ${inputValue} vous pouvez chercher « tarte aux pommes », « poisson » `
+			`Aucune recette ne contient «${inputValue}» vous pouvez chercher « tarte aux pommes », « poisson » `
 		);
 	}
 	for (let i = 0; i < filteredRecipients.length; i++) {

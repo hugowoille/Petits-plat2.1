@@ -73,6 +73,14 @@
 		overflow-y: scroll;
 		li {
 			padding: 10px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			img {
+				height: 17px;
+				width: 17px;
+				margin-right: 5px;
+			}
 			&:hover {
 				background-color: $yellow;
 				cursor: pointer;

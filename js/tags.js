@@ -14,22 +14,26 @@ const ingredientsSearchForm = document.getElementById(
 const ingredientsList = utilsFunction.getIngredientsList(recipes);
 for (let i = 0; i < ingredientsList.length; i++) {
 	const ingredient = document.createElement("li");
-
 	ingredient.textContent = ingredientsList[i];
 	ingredientsContainer.appendChild(ingredient);
 	let isIngredientClicked = false;
+	const tagResetImg = document.createElement("img");
 	ingredient.addEventListener("click", function () {
 		if (!isIngredientClicked) {
-			ingredient.style.backgroundColor = "#ffd15b";
-			const tagResetImg = document.createElement("img");
+			ingredient.classList.add("focus-li");
 			tagResetImg.src = "../img/tag_reset.png";
 			tagResetImg.addEventListener("click", function () {
-				ingredient.style.backgroundColor = "white";
 				tagResetImg.style.display = "none";
-				/* isIngredientClicked = false; */
+				ingredient.classList.remove("focus-li");
 			});
 			ingredient.appendChild(tagResetImg);
+			tagResetImg.style.display = "block";
 			isIngredientClicked = true;
+		} else if (
+			isIngredientClicked &&
+			tagResetImg.style.display === "none"
+		) {
+			isIngredientClicked = false;
 		}
 	});
 }
@@ -72,6 +76,23 @@ for (let i = 0; i < appliancesList.length; i++) {
 	const appliance = document.createElement("li");
 	appliance.textContent = appliancesList[i];
 	appliancesContainer.appendChild(appliance);
+	let isApplianceClicked = false;
+	const tagResetImg = document.createElement("img");
+	appliance.addEventListener("click", function () {
+		if (!isApplianceClicked) {
+			appliance.classList.add("focus-li");
+			tagResetImg.src = "../img/tag_reset.png";
+			tagResetImg.addEventListener("click", function () {
+				tagResetImg.style.display = "none";
+				appliance.classList.remove("focus-li");
+			});
+			appliance.appendChild(tagResetImg);
+			tagResetImg.style.display = "block";
+			isApplianceClicked = true;
+		} else if (isApplianceClicked && tagResetImg.style.display === "none") {
+			isApplianceClicked = false;
+		}
+	});
 }
 
 let isBtnApplianceClicked = false;
@@ -112,6 +133,24 @@ for (let i = 0; i < ustensilsList.length; i++) {
 	const ustensil = document.createElement("li");
 	ustensil.textContent = ustensilsList[i];
 	ustensilsContainer.appendChild(ustensil);
+	let isUstensilClicked = false;
+	const tagResetImg = document.createElement("img");
+
+	ustensil.addEventListener("click", function () {
+		if (!isUstensilClicked) {
+			ustensil.classList.add("focus-li");
+			tagResetImg.src = "../img/tag_reset.png";
+			tagResetImg.addEventListener("click", function () {
+				tagResetImg.style.display = "none";
+				ustensil.classList.remove("focus-li");
+			});
+			ustensil.appendChild(tagResetImg);
+			tagResetImg.style.display = "block";
+			isUstensilClicked = true;
+		} else if (isUstensilClicked && tagResetImg.style.display === "none") {
+			isUstensilClicked = false;
+		}
+	});
 }
 
 let isBtnUstensilClicked = false;

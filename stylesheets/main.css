@@ -572,11 +572,18 @@ header #search-form #search-button i {
   height: 230px;
   overflow-y: scroll;
 }
+#filter-bar .tags-container .focus-li {
+  background-color: #ffd15b;
+  padding-left: 20px;
+  font-size: 18px;
+  font-weight: 500;
+}
 #filter-bar .tags-container li {
   padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: padding 0.2s;
 }
 #filter-bar .tags-container li img {
   height: 17px;

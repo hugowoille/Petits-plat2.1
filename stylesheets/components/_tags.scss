@@ -71,11 +71,19 @@
 		display: none;
 		height: 230px;
 		overflow-y: scroll;
+		.focus-li {
+			background-color: $yellow;
+			padding-left: 20px;
+			font-size: 18px;
+			font-weight: 500;
+		}
 		li {
 			padding: 10px;
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+			transition: padding 0.2s;
+
 			img {
 				height: 17px;
 				width: 17px;

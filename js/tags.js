@@ -133,9 +133,9 @@ for (let i = 0; i < ustensilsList.length; i++) {
 	const ustensil = document.createElement("li");
 	ustensil.textContent = ustensilsList[i];
 	ustensilsContainer.appendChild(ustensil);
+
 	let isUstensilClicked = false;
 	const tagResetImg = document.createElement("img");
-
 	ustensil.addEventListener("click", function () {
 		if (!isUstensilClicked) {
 			ustensil.classList.add("focus-li");
@@ -172,6 +172,22 @@ const ustensilSearchInput = document.getElementById("ustensils_search-input");
 resetUstensilsInputBtn.addEventListener("click", function () {
 	resetSearchTagsInput(ustensilSearchInput);
 });
+
+function onFocusTagsEffect(tag, isTagClicked, resetImg) {
+	if (!isTagClicked) {
+		tag.classList.add("focus-li");
+		resetImg.src = "../img/tag_reset.png";
+		resetImg.addEventListener("click", function () {
+			resetImg.style.display = "none";
+			tag.classList.remove("focus-li");
+		});
+		tag.appendChild(resetImg);
+		resetImg.style.display = "block";
+		isTagClicked = true;
+	} else if (isTagClicked && resetImg.style.display === "none") {
+		isTagClicked = false;
+	}
+}
 
 function showTags(ulOfElement, searchBarOfElement, isClicked, tagsSection) {
 	if (!isClicked) {

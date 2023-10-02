@@ -489,13 +489,14 @@ header #search-form #search-button {
 header #search-form #search-button:hover {
   background-color: #ffd15b;
 }
-header #search-form #search-button:hover > i {
-  color: #1b1b1b;
+header #search-form #search-button svg {
+  width: 30px;
 }
-header #search-form #search-button i {
-  color: white;
-  font-size: 25px;
-  line-height: 54px;
+header #search-form #search-button:hover .cls-1 {
+  stroke: #1b1b1b;
+}
+header #search-form #search-button .cls-1 {
+  stroke: white;
 }
 
 #filter-bar {

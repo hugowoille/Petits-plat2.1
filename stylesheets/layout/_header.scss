@@ -62,13 +62,14 @@ header {
 			&:hover {
 				background-color: $yellow;
 			}
-			&:hover > i {
-				color: $darkgrey;
+			svg {
+				width: 30px;
 			}
-			i {
-				color: white;
-				font-size: 25px;
-				line-height: 54px;
+			&:hover .cls-1 {
+				stroke: $darkgrey;
+			}
+			.cls-1 {
+				stroke: white;
 			}
 		}
 	}

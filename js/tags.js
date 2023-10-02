@@ -8,6 +8,9 @@ const ingredientBtn = document.getElementById("ingredients-btn");
 const ingredientsSearchForm = document.getElementById(
 	"ingredients-search-form"
 );
+const selectedIngredientTagsContainer = document.getElementById(
+	"selected-ingredient-tags-container"
+);
 
 // Adding ingredientsList to ingredients container
 
@@ -35,6 +38,7 @@ for (let i = 0; i < ingredientsList.length; i++) {
 		) {
 			isIngredientClicked = false;
 		}
+		createDivOnSelectedItem(ingredient, selectedIngredientTagsContainer);
 	});
 }
 
@@ -68,6 +72,9 @@ const appliancesSection = document.getElementById("appliance");
 const appliancesContainer = document.getElementById("appliance-tags");
 const applianceSearchForm = document.getElementById("appliance-search-form");
 const applianceBtn = document.getElementById("appliance-btn");
+const selectedApplianceTagsContainer = document.getElementById(
+	"selected-appliance-tags-container"
+);
 
 // Adding applianceList to appliances container
 
@@ -92,6 +99,7 @@ for (let i = 0; i < appliancesList.length; i++) {
 		} else if (isApplianceClicked && tagResetImg.style.display === "none") {
 			isApplianceClicked = false;
 		}
+		createDivOnSelectedItem(appliance, selectedApplianceTagsContainer);
 	});
 }
 
@@ -154,11 +162,7 @@ for (let i = 0; i < ustensilsList.length; i++) {
 		} else if (isUstensilClicked && tagResetImg.style.display === "none") {
 			isUstensilClicked = false;
 		}
-		createDivOnSelectedItem(
-			ustensil,
-			selectedUstensilsTagsContainer,
-			tagResetImg
-		);
+		createDivOnSelectedItem(ustensil, selectedUstensilsTagsContainer);
 	});
 }
 
@@ -183,15 +187,16 @@ resetUstensilsInputBtn.addEventListener("click", function () {
 });
 
 function createDivOnSelectedItem(selectedTag, selectedTagContainer) {
-	const unselectTag = document.getElementsByClassName("unselect-cross");
-
 	const selectedTagDiv = document.createElement("div");
-	unselectTag.addEventListener("click", function () {
-		selectedTagDiv.style.display = "none";
-	});
+	const unselectCross = document.createElement("img");
+	unselectCross.src = "../img/vector.png";
 	selectedTagDiv.classList.add("selected-tag");
 	selectedTagDiv.textContent = selectedTag.textContent;
+	selectedTagDiv.appendChild(unselectCross);
 	selectedTagContainer.appendChild(selectedTagDiv);
+	unselectCross.addEventListener("click", function () {
+		selectedTagDiv.remove();
+	});
 }
 
 /* function onFocusTagsEffect(tag, isTagClicked, resetImg) {

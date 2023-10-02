@@ -619,6 +619,17 @@ header #search-form #search-button .cls-1 {
   padding: 10px;
   line-height: 24px;
   margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+}
+#selected-tags-section-container .selected-tags-containers .selected-tag img {
+  width: 13px;
+  height: 13px;
+  margin-right: 5px;
+  cursor: pointer;
 }
 
 .card {

@@ -3,6 +3,7 @@
 	z-index: 10;
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 10px;
 	#recettes-number {
 		line-height: 48px;
 	}
@@ -93,6 +94,30 @@
 				background-color: $yellow;
 				cursor: pointer;
 			}
+		}
+	}
+}
+#selected-tags-section-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	&:after {
+		content: "";
+		width: 98.9px;
+	}
+	.selected-tags-containers {
+		display: flex;
+		flex-direction: column;
+		width: 230px;
+
+		.selected-tag {
+			width: 230px;
+			background-color: $yellow;
+			height: 48px;
+			border-radius: 11px;
+			padding: 10px;
+			line-height: 24px;
+			margin-bottom: 10px;
 		}
 	}
 }

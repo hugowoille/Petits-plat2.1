@@ -125,6 +125,9 @@ const ustensilsSection = document.getElementById("ustensils");
 const ustensilsContainer = document.getElementById("ustensils-tags");
 const ustensilSearchForm = document.getElementById("ustensils-search-form");
 const ustensilBtn = document.getElementById("ustensils-btn");
+const selectedUstensilsTagsContainer = document.getElementById(
+	"selected-ustensil-tags-container"
+);
 
 // adding ustensilsList to ustensils container
 
@@ -136,6 +139,7 @@ for (let i = 0; i < ustensilsList.length; i++) {
 
 	let isUstensilClicked = false;
 	const tagResetImg = document.createElement("img");
+	tagResetImg.setAttribute("class", "unselect-cross");
 	ustensil.addEventListener("click", function () {
 		if (!isUstensilClicked) {
 			ustensil.classList.add("focus-li");
@@ -150,6 +154,11 @@ for (let i = 0; i < ustensilsList.length; i++) {
 		} else if (isUstensilClicked && tagResetImg.style.display === "none") {
 			isUstensilClicked = false;
 		}
+		createDivOnSelectedItem(
+			ustensil,
+			selectedUstensilsTagsContainer,
+			tagResetImg
+		);
 	});
 }
 
@@ -173,7 +182,19 @@ resetUstensilsInputBtn.addEventListener("click", function () {
 	resetSearchTagsInput(ustensilSearchInput);
 });
 
-function onFocusTagsEffect(tag, isTagClicked, resetImg) {
+function createDivOnSelectedItem(selectedTag, selectedTagContainer) {
+	const unselectTag = document.getElementsByClassName("unselect-cross");
+
+	const selectedTagDiv = document.createElement("div");
+	unselectTag.addEventListener("click", function () {
+		selectedTagDiv.style.display = "none";
+	});
+	selectedTagDiv.classList.add("selected-tag");
+	selectedTagDiv.textContent = selectedTag.textContent;
+	selectedTagContainer.appendChild(selectedTagDiv);
+}
+
+/* function onFocusTagsEffect(tag, isTagClicked, resetImg) {
 	if (!isTagClicked) {
 		tag.classList.add("focus-li");
 		resetImg.src = "../img/tag_reset.png";
@@ -187,7 +208,7 @@ function onFocusTagsEffect(tag, isTagClicked, resetImg) {
 	} else if (isTagClicked && resetImg.style.display === "none") {
 		isTagClicked = false;
 	}
-}
+} */
 
 function showTags(ulOfElement, searchBarOfElement, isClicked, tagsSection) {
 	if (!isClicked) {

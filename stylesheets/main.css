@@ -504,6 +504,7 @@ header #search-form #search-button .cls-1 {
   z-index: 10;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 #filter-bar #recettes-number {
   line-height: 48px;
@@ -594,6 +595,30 @@ header #search-form #search-button .cls-1 {
 #filter-bar .tags-container li:hover {
   background-color: #ffd15b;
   cursor: pointer;
+}
+
+#selected-tags-section-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#selected-tags-section-container:after {
+  content: "";
+  width: 98.9px;
+}
+#selected-tags-section-container .selected-tags-containers {
+  display: flex;
+  flex-direction: column;
+  width: 230px;
+}
+#selected-tags-section-container .selected-tags-containers .selected-tag {
+  width: 230px;
+  background-color: #ffd15b;
+  height: 48px;
+  border-radius: 11px;
+  padding: 10px;
+  line-height: 24px;
+  margin-bottom: 10px;
 }
 
 .card {
